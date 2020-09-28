@@ -400,20 +400,23 @@ Write-Host "Executing $max_exec -secure off $cameraParam $renderPresetFileParam 
 Write-Host "DBG 2019 : content of $env:3DSMAX_2019 directory"
 $max2019Items =  get-childitem  "$env:3DSMAX_2019" -name
 foreach($itm2019 in $max2019Items){Write-Output $itm2019}
-
-Write-Host "DBG 2019 : 3dsmaxio.exe 2019 help"
-$maxio_exec = "${env:3DSMAX_2019}3dsmaxio.exe"
-Write-Host "Executing $maxio_exec -h"
-cmd.exe /c $maxio_exec -h
+Write-Host "DBG 2019 : END"
 
 Write-Host "DBG 2020 : content of ${env:3DSMAX_2020} directory"
 $max2020Items =  get-childitem  "$env:3DSMAX_2020" -name
 foreach($itm2020 in $max2020Items){Write-Output $itm2020}
+Write-Host "DBG 2020 : END"
+
+Write-Host "DBG 2019 : 3dsmaxio.exe 2019 help"
+$maxio_exec = "${env:3DSMAX_2019}3dsmaxio.exe"
+Write-Host "Executing $maxio_exec -h"
+cmd.exe /c $maxio_exec -batch
+
 
 Write-Host "DBG 2020 : 3dsmaxio.exe 2019 help"
 $maxio_exec = "${env:3DSMAX_2020}3dsmaxio.exe"
 Write-Host "Executing $maxio_exec -h"
-cmd.exe /c $maxio_exec -h
+cmd.exe /c $maxio_exec -batch
 
 exit 1
 # tmp DBG : END
