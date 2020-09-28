@@ -409,13 +409,13 @@ Write-Host "DBG 2020 : END"
 
 Write-Host "DBG 2019 : 3dsmaxio.exe 2019 help"
 $maxio_exec = "${env:3DSMAX_2019}3dsmaxio.exe"
-Write-Host "Executing $maxio_exec -h"
+Write-Host "Executing $maxio_exec -batch"
 cmd.exe /c $maxio_exec -batch
 
 
 Write-Host "DBG 2020 : 3dsmaxio.exe 2019 help"
 $maxio_exec = "${env:3DSMAX_2020}3dsmaxio.exe"
-Write-Host "Executing $maxio_exec -h"
+Write-Host "Executing $maxio_exec -batch"
 cmd.exe /c $maxio_exec -batch
 
 exit 1
