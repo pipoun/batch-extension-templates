@@ -396,6 +396,11 @@ Else
 
 Write-Host "Executing $max_exec -secure off $cameraParam $renderPresetFileParam $defaultArgumentsParam $additionalArgumentsParam -preRenderScript:`"$pre_render_script`" -start:$start -end:$end -outputName:`"$outputName`" $pathFileParam `"$sceneFile`""
 
+# tmp
+$max2019Items =  get-childitem  "$env:3DSMAX_2019" -name
+foreach($itm2019 in $max2019Items){Write-Output $itm2019}
+exit 1
+
 cmd.exe /c $max_exec -secure off $cameraParam $renderPresetFileParam $defaultArgumentsParam $additionalArgumentsParam -preRenderScript:`"$pre_render_script`" -start:$start -end:$end -v:5 -outputName:`"$outputName`" $pathFileParam `"$sceneFile`" `>Max_frame.log 2`>`&1
 $result = $lastexitcode
 
