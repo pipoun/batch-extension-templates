@@ -407,16 +407,16 @@ $max2020Items =  get-childitem  "$env:3DSMAX_2020" -name
 foreach($itm2020 in $max2020Items){Write-Output $itm2020}
 Write-Host "DBG 2020 : END"
 
-Write-Host "DBG 2019 : 3dsmaxio.exe 2019 help"
-$maxio_exec = "${env:3DSMAX_2019}3dsmaxio.exe"
-Write-Host "Executing $maxio_exec -batch"
-cmd.exe /c $maxio_exec -batch
-
-
-Write-Host "DBG 2020 : 3dsmaxio.exe 2019 help"
+Write-Host "DBG 2020 : 3dsmaxio.exe"
 $maxio_exec = "${env:3DSMAX_2020}3dsmaxio.exe"
 Write-Host "Executing $maxio_exec -batch"
-cmd.exe /c $maxio_exec -batch
+cmd.exe /c $maxio_exec -batch `>Max_frame.log 2`>`&1
+
+Write-Host "DBG 2019 : 3dsmaxio.exe"
+$maxio_exec = "${env:3DSMAX_2019}3dsmaxio.exe"
+Write-Host "Executing $maxio_exec -batch"
+cmd.exe /c $maxio_exec -batch `>Max_frame.log 2`>`&1
+
 
 exit 1
 # tmp DBG : END
