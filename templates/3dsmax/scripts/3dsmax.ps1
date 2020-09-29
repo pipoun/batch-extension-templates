@@ -243,6 +243,23 @@ else
     Write-Host "No pre-render script specified"
 }
 
+if (ParameterValueSet $batchPythonScript)
+{
+    $batchPythonScript = "$workingDirectory\$batchPythonScript"
+    
+    if (-Not [System.IO.File]::Exists($batchPythonScript))
+    {        
+        Write-Host "Batch python script $batchPythonScript not found, exiting."
+        exit 1
+    }
+    
+    Write-Host "Using absolute batch python script $batchPythonScript"
+}
+else
+{
+    Write-Host "No batch python script specified"
+}
+
 $sceneFile = "$workingDirectory\$sceneFile"
 Write-Host "Using absolute scene file $sceneFile"
 
