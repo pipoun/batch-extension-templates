@@ -435,12 +435,11 @@ ElseIf ($maxVersion -eq "2020")
 Write-Host "DBG $maxVersion : Executing $maxio_exec -silent -secure off -batch -U PythonHost `"$batchPythonScript`" `"$sceneFile`""
 cmd.exe /c $maxio_exec -silent -secure off -batch -U PythonHost `"$batchPythonScript`" `"$sceneFile`" `>Max_frame.log 2`>`&1
 
-exit 1
 # tmp DBG : END
 
 Write-Host "Executing $max_exec -secure off $cameraParam $renderPresetFileParam $defaultArgumentsParam $additionalArgumentsParam -preRenderScript:`"$pre_render_script`" -start:$start -end:$end -outputName:`"$outputName`" $pathFileParam `"$sceneFile`""
 
-cmd.exe /c $max_exec -secure off $cameraParam $renderPresetFileParam $defaultArgumentsParam $additionalArgumentsParam -preRenderScript:`"$pre_render_script`" -start:$start -end:$end -v:5 -outputName:`"$outputName`" $pathFileParam `"$sceneFile`" `>Max_frame.log 2`>`&1
+# cmd.exe /c $max_exec -secure off $cameraParam $renderPresetFileParam $defaultArgumentsParam $additionalArgumentsParam -preRenderScript:`"$pre_render_script`" -start:$start -end:$end -v:5 -outputName:`"$outputName`" $pathFileParam `"$sceneFile`" `>Max_frame.log 2`>`&1
 $result = $lastexitcode
 
 Write-Host "last exit code $result"
