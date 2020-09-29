@@ -432,8 +432,8 @@ ElseIf ($maxVersion -eq "2020")
     $maxio_exec = "${env:3DSMAX_2020}3dsmaxio.exe"
 }
 
-Write-Host "DBG $maxVersion : Executing $maxio_exec -secure off -batch -U PythonHost `"$batchPythonScript`" `"$sceneFile`""
-cmd.exe /c $maxio_exec -secure off -batch -U PythonHost `"$batchPythonScript`" `"$sceneFile`" `>Max_frame.log 2`>`&1
+Write-Host "DBG $maxVersion : Executing $maxio_exec -silent -secure off -batch -U PythonHost `"$batchPythonScript`" `"$sceneFile`""
+cmd.exe /c $maxio_exec -silent -secure off -batch -U PythonHost `"$batchPythonScript`" `"$sceneFile`" `>Max_frame.log 2`>`&1
 
 exit 1
 # tmp DBG : END
