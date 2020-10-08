@@ -315,27 +315,27 @@ if (ParameterValueSet $additionalArgs)
 
 # Default 3ds Max args
 $defaultArguments = @{
-    '-atmospherics'='0';
-    '-renderHidden'='0';
-    '-effects'='0';
-    '-useAreaLights'='0';
-    '-displacements'='0';
-    '-force2Sided'='0';
-    '-videoColorCheck'='0';
-    '-superBlack'='0';
-    '-renderFields'='0';
-    '-fieldOrder'='Odd';
-    '-skipRenderedFrames'='0';
-    '-renderElements'='1';
-    '-useAdvLight'='0';
-    '-computeAdvLight'='0';
-    '-ditherPaletted'='0';
-    '-ditherTrueColor'='0';
+#    '-atmospherics'='0';
+#    '-renderHidden'='0';
+#    '-effects'='0';
+#    '-useAreaLights'='0';
+#    '-displacements'='0';
+#    '-force2Sided'='0';
+#    '-videoColorCheck'='0';
+#    '-superBlack'='0';
+#    '-renderFields'='0';
+#    '-fieldOrder'='Odd';
+#    '-skipRenderedFrames'='0';
+#    '-renderElements'='1';
+#    '-useAdvLight'='0';
+#    '-computeAdvLight'='0';
+#    '-ditherPaletted'='0';
+#    '-ditherTrueColor'='0';
     '-gammaCorrection'='1';
     '-gammaValueIn'='2.2';
     '-gammaValueOut'='2.2';
-    '-rfw'='0';
-    '-videopostJob'='0';
+#    '-rfw'='0';
+#    '-videopostJob'='0';
     '-v'='5';
 }
 
@@ -432,14 +432,14 @@ ElseIf ($maxVersion -eq "2020")
     $maxio_exec = "${env:3DSMAX_2020}3dsmaxio.exe"
 }
 
-Write-Host "DBG $maxVersion : Executing $maxio_exec -silent -secure off -batch -U PythonHost `"$batchPythonScript`" `"$sceneFile`""
-cmd.exe /c $maxio_exec -silent -secure off -batch -U PythonHost `"$batchPythonScript`" `"$sceneFile`" `>Max_frame.log 2`>`&1
+# Write-Host "DBG $maxVersion : Executing $maxio_exec -silent -secure off -batch -U PythonHost `"$batchPythonScript`" `"$sceneFile`""
+# cmd.exe /c $maxio_exec -silent -secure off -batch -U PythonHost `"$batchPythonScript`" `"$sceneFile`" `>Max_frame.log 2`>`&1
 
 # tmp DBG : END
 
 Write-Host "Executing $max_exec -secure off $cameraParam $renderPresetFileParam $defaultArgumentsParam $additionalArgumentsParam -preRenderScript:`"$pre_render_script`" -start:$start -end:$end -outputName:`"$outputName`" $pathFileParam `"$sceneFile`""
 
-# cmd.exe /c $max_exec -secure off $cameraParam $renderPresetFileParam $defaultArgumentsParam $additionalArgumentsParam -preRenderScript:`"$pre_render_script`" -start:$start -end:$end -v:5 -outputName:`"$outputName`" $pathFileParam `"$sceneFile`" `>Max_frame.log 2`>`&1
+cmd.exe /c $max_exec -secure off $cameraParam $renderPresetFileParam $defaultArgumentsParam $additionalArgumentsParam -preRenderScript:`"$pre_render_script`" -start:$start -end:$end -v:5 -outputName:`"$outputName`" $pathFileParam `"$sceneFile`" `>Max_frame.log 2`>`&1
 $result = $lastexitcode
 
 Write-Host "last exit code $result"
