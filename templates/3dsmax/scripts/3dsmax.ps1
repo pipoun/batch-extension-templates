@@ -420,7 +420,7 @@ If ($maxVersion -eq "2019")
     foreach($itm2019 in $max2019Items){Write-Output $itm2019}
     Write-Host "DBG $maxVersion : content END"
 
-    $maxio_exec = "${env:3DSMAX_2019}3dsmaxio.exe"
+    $maxio_exec = "${env:3DSMAX_2019}3dsmaxcmdio.exe"
 }
 ElseIf ($maxVersion -eq "2020")
 {
@@ -429,7 +429,7 @@ ElseIf ($maxVersion -eq "2020")
     foreach($itm2020 in $max2020Items){Write-Output $itm2020}
     Write-Host "DBG $maxVersion : content END"
 
-    $maxio_exec = "${env:3DSMAX_2020}3dsmaxio.exe"
+    $maxio_exec = "${env:3DSMAX_2020}3dsmaxcmdio.exe"
 }
 
 # Write-Host "DBG $maxVersion : Executing $maxio_exec -silent -secure off -batch -U PythonHost `"$batchPythonScript`" `"$sceneFile`""
