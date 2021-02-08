@@ -263,27 +263,27 @@ if (ParameterValueSet $additionalArgs)
 
 # Default 3ds Max args
 $defaultArguments = @{
-    '-atmospherics'='0';
-    '-renderHidden'='0';
-    '-effects'='0';
-    '-useAreaLights'='0';
-    '-displacements'='0';
-    '-force2Sided'='0';
-    '-videoColorCheck'='0';
-    '-superBlack'='0';
-    '-renderFields'='0';
-    '-fieldOrder'='Odd';
-    '-skipRenderedFrames'='0';
-    '-renderElements'='1';
-    '-useAdvLight'='0';
-    '-computeAdvLight'='0';
-    '-ditherPaletted'='0';
-    '-ditherTrueColor'='0';
+#    '-atmospherics'='0';
+#    '-renderHidden'='0';
+#    '-effects'='0';
+#    '-useAreaLights'='0';
+#    '-displacements'='0';
+#    '-force2Sided'='0';
+#    '-videoColorCheck'='0';
+#    '-superBlack'='0';
+#    '-renderFields'='0';
+#    '-fieldOrder'='Odd';
+#    '-skipRenderedFrames'='0';
+#    '-renderElements'='1';
+#    '-useAdvLight'='0';
+#    '-computeAdvLight'='0';
+#    '-ditherPaletted'='0';
+#    '-ditherTrueColor'='0';
     '-gammaCorrection'='1';
     '-gammaValueIn'='2.2';
     '-gammaValueOut'='2.2';
-    '-rfw'='0';
-    '-videopostJob'='0';
+#    '-rfw'='0';
+#    '-videopostJob'='0';
     '-v'='5';
 }
 
