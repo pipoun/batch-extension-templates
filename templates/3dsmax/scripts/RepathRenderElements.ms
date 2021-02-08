@@ -27,7 +27,7 @@ indexVrayNext = findString rendererName "V_Ray_Next_"
 if (indexVrayAdv == 1 or indexVrayNext == 1) then
 (
     irAutoSavePath = r.adv_irradmap_autoSaveFileName
-    if(irAutoSavePath != undefined) then
+    if(irAutoSavePath != undefined and irAutoSavePath != "") then
     (
         tokens = filterString irAutoSavePath "\\"
         filename = tokens[tokens.count]
@@ -37,7 +37,7 @@ if (indexVrayAdv == 1 or indexVrayNext == 1) then
     )
 
     irSavePath = r.adv_irradmap_saveFileName
-    if(irSavePath != undefined) then
+    if(irSavePath != undefined and irSavePath != "") then
     (
         tokens = filterString irSavePath "\\"
         filename = tokens[tokens.count]
